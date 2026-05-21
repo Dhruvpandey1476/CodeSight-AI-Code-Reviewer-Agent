@@ -360,7 +360,6 @@ if run_btn:
         progress.progress(pct, text=f"Reviewing {pf['filename']} ({i+1}/{total})…")
         try:
             comments = agent.review_file(pf)
-            debug_log.append(f"✅ {pf['filename']} → {len(comments)} comments")
             all_comments.extend(comments)
         except Exception as e:
             import traceback
