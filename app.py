@@ -354,7 +354,6 @@ if run_btn:
     all_comments = []
     total = len(parsed_files)
     error_log = []
-    debug_log = []
 
     for i, pf in enumerate(parsed_files):
         pct = 50 + int((i / total) * 40)
@@ -367,15 +366,9 @@ if run_btn:
             import traceback
             tb = traceback.format_exc()
             error_log.append(f"**{pf['filename']}**: `{type(e).__name__}: {e}`\n```\n{tb}\n```")
-            debug_log.append(f"❌ {pf['filename']} → {type(e).__name__}: {e}")
 
-    # Always show debug info so you can see what's happening
-    with st.expander("🔍 Debug log — click to inspect", expanded=True):
-        for line in debug_log:
-            st.markdown(line)
-        if error_log:
-            st.markdown("---")
-            st.markdown("**Full tracebacks:**")
+    if error_log:
+        with st.expander("⚠️ Errors during review", expanded=True):       
             for err in error_log:
                 st.markdown(err)
 
