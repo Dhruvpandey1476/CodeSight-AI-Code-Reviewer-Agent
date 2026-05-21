@@ -55,7 +55,7 @@
                      │
           ┌──────────▼──────────┐
           │   3. LLM REVIEW     │  src/reviewer.py
-          │   Groq LLama 7 B    │  • ReviewAgent.review_file()
+          │   Groq LLama 70 B   │  • ReviewAgent.review_file()
           │   Per chunk         │  • _build_user_prompt()
           │                     │  • _parse_llm_response()
           │   Outputs JSON:     │  • _validate_comment()
@@ -226,10 +226,3 @@ Low-confidence comments are visually separated in a dedicated panel with a red "
 
 ---
 
-## 🪪 License
-
-MIT — see `LICENSE`.
-
----
-
-*Built with ❤️ for CipherSchools AI/ML Mentor Role Assignment.*
